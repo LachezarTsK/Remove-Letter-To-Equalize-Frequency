@@ -25,16 +25,17 @@ public class Solution {
     }
 
     private boolean allFrequenciesAreEqual(int[] frequency) {
+        
         int firstNonzeroFrequency = 0;
-        for (int i = 0; i < ALPHABET_SIZE; ++i) {
-            if (frequency[i] == 0) {
+        for (int currentFrequency : frequency) {
+            if (currentFrequency == 0) {
                 continue;
             }
             if (firstNonzeroFrequency == 0) {
-                firstNonzeroFrequency = frequency[i];
+                firstNonzeroFrequency = currentFrequency;
                 continue;
             }
-            if (firstNonzeroFrequency != frequency[i]) {
+            if (firstNonzeroFrequency != currentFrequency) {
                 return false;
             }
         }
